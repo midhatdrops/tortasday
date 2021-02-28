@@ -19,9 +19,10 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint', 'react-hooks', 'prettier'],
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': 'off',
     "no-use-before-define": 'off',
     'react-hooks/rules-of-hooks': 'error',
+    "react/prop-types": [0],
     'react-hooks/exhaustive-deps': 'warn',
     'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
     'import/prefer-default-export': 'off',

@@ -1,11 +1,15 @@
+/*
+font-family: 'Ballet', cursive;
+font-family: 'Sacramento', cursive;
+font-family: 'Shippori Mincho', serif;
+font-family: 'Ubuntu', sans-serif;
+*/
+
 import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello Word</h1>
-    </div>
-  );
-}
+import { HomePage } from './Pages/Homepage';
 
-export default App;
+export const App = () => {
+  // eslint-disable-next-line no-unused-vars
+  return <HomePage />;
+};
