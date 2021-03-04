@@ -5,23 +5,32 @@ font-family: 'Shippori Mincho', serif;
 font-family: 'Ubuntu', sans-serif;
 */
 
-import React, { useEffect, useState } from 'react';
-
+import React from 'react';
+import { Reset } from 'styled-reset';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { HomePage } from './Pages/Homepage';
-import { LoadingPage } from './Pages/Loading';
+import { History } from './Pages/History';
+import { Comunnity } from './Pages/Comunnity';
 
 export const App = () => {
-  const [state, SetState] = useState('LOADING');
-  useEffect(() => {
-    setTimeout(() => {
-      SetState('LOADED');
-    }, 1000);
-  });
+  // const [state, SetState] = useState('LOADING');
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     SetState('LOADED');
+  //   }, 1000);
+  // });
   // eslint-disable-next-line no-unused-vars
   return (
     <>
-      {state === 'LOADING' && <LoadingPage />}
-      {state === 'LOADED' && <HomePage />}
+      <Reset />
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/history" component={History} />
+          <Route path="/community" component={Comunnity} />
+        </Switch>
+      </BrowserRouter>
     </>
   );
 };

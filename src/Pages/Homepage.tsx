@@ -13,7 +13,7 @@ const Background = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  overflow-y: none;
+  overflow: hidden;
 `;
 
 export const HomePage = () => {

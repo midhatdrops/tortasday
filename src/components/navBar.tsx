@@ -1,6 +1,8 @@
 /* eslint-disable react/button-has-type */
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { Button } from './button';
 
 const AppBar = styled.nav`
   @media (max-width: 540px) {
@@ -134,36 +136,48 @@ const TypoArea = styled.div`
 `;
 
 interface NavBarProps {
-  lang: string;
+  lang?: string | 'eng';
+  activated?: string;
+  setActive?: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export const Navbar: React.FC<NavBarProps> = ({ lang = 'ptbr' as string }) => {
+export const Navbar: React.FC<NavBarProps> = ({ lang }) => {
   const [activated, setActive] = useState('homepage');
   return (
-    <AppBar>
-      <TypoArea>
-        <button
-          id="homepage"
-          style={{ opacity: activated === 'homepage' ? '1' : '0.5' }}
-          onClick={() => setActive('homepage')}
-        >
-          {lang === 'ptbr' ? 'Início' : 'Homepage'}
-        </button>
-        <button
-          id="History"
-          style={{ opacity: activated === 'History' ? '1' : '0.5' }}
-          onClick={() => setActive('History')}
-        >
-          {lang === 'ptbr' ? 'História' : 'History'}
-        </button>
-        <button
-          id="Community"
-          style={{ opacity: activated === 'Community' ? '1' : '0.5' }}
-          onClick={() => setActive('Community')}
-        >
-          {lang === 'ptbr' ? 'Comunidade' : 'Community'}
-        </button>
-      </TypoArea>
-    </AppBar>
+    <>
+      <style />
+      <AppBar>
+        <TypoArea>
+          <Link to="/">
+            <Button
+              id="Homepage"
+              style={{ opacity: activated === 'History' ? '1' : '0.5' }}
+              onClick={() => setActive('homepage')}
+            >
+              {lang === 'ptbr' ? 'Início' : 'Homepage'}
+            </Button>
+          </Link>
+          <Link to="/history" onClick={() => setActive('History')}>
+            <Button
+              id="History"
+              style={{ opacity: activated === 'History' ? '1' : '0.5' }}
+              onClick={() => setActive('homepage')}
+            >
+              {lang === 'ptbr' ? 'História' : 'History'}
+            </Button>
+          </Link>
+
+          <Link to="/community" onClick={() => setActive('Community')}>
+            <Button
+              id="Comunnity"
+              style={{ opacity: activated === 'History' ? '1' : '0.5' }}
+              onClick={() => setActive('homepage')}
+            >
+              {lang === 'ptbr' ? 'Comunidade' : 'Community'}
+            </Button>
+          </Link>
+        </TypoArea>
+      </AppBar>
+    </>
   );
 };

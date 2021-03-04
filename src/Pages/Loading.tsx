@@ -1,3 +1,5 @@
+/* eslint-disable func-names */
+/* eslint-disable no-plusplus */
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
@@ -18,6 +20,7 @@ const Span = styled.span`
   font-weight: 400;
   letter-spacing: 8px;
   color: whitesmoke;
+  text-align: center;
 `;
 
 const BarBackground = styled.div`
@@ -29,29 +32,24 @@ const BarBackground = styled.div`
 
 const BarFill = styled.div`
   background-color: whitesmoke;
-  width: 0%;
   height: 100%;
-  box-sizing: content-box;
+  transition: width 1s easy-in-out;
 `;
 
 export const LoadingPage: React.FC = () => {
   const [width, setWidth] = useState(0);
   useEffect(() => {
-    // eslint-disable-next-line consistent-return
     setInterval(() => {
       let newWidth = width;
-      setWidth((newWidth += 1));
-      if (newWidth >= 100) {
-        return setWidth(100);
-      }
-      return setWidth(newWidth);
-    }, 1);
+      newWidth++;
+      setWidth(newWidth);
+    });
   });
   return (
     <Background>
       <Span>Teste</Span>
       <BarBackground>
-        <BarFill />
+        <BarFill style={{ width: `${width}%` }} />
       </BarBackground>
     </Background>
   );
