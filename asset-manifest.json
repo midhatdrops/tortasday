@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.js": "/tortasday/static/js/main.ebe3968c.chunk.js",
+    "main.js.map": "/tortasday/static/js/main.ebe3968c.chunk.js.map",
+    "runtime-main.js": "/tortasday/static/js/runtime-main.6deffaa7.js",
+    "runtime-main.js.map": "/tortasday/static/js/runtime-main.6deffaa7.js.map",
+    "static/js/2.fa599670.chunk.js": "/tortasday/static/js/2.fa599670.chunk.js",
+    "static/js/2.fa599670.chunk.js.map": "/tortasday/static/js/2.fa599670.chunk.js.map",
+    "index.html": "/tortasday/index.html",
+    "static/js/2.fa599670.chunk.js.LICENSE.txt": "/tortasday/static/js/2.fa599670.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6deffaa7.js",
+    "static/js/2.fa599670.chunk.js",
+    "static/js/main.ebe3968c.chunk.js"
+  ]
+}
