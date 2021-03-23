@@ -148,7 +148,7 @@ export const Navbar: React.FC<NavBarProps> = ({ lang }) => {
       <style />
       <AppBar>
         <TypoArea>
-          <Link to="/">
+          <Link to="/tortasday">
             <Button
               id="Homepage"
               style={{ opacity: activated === 'History' ? '1' : '0.5' }}
@@ -157,7 +157,7 @@ export const Navbar: React.FC<NavBarProps> = ({ lang }) => {
               {lang === 'ptbr' ? 'Início' : 'Homepage'}
             </Button>
           </Link>
-          <Link to="/history" onClick={() => setActive('History')}>
+          <Link to="/tortasday/history" onClick={() => setActive('History')}>
             <Button
               id="History"
               style={{ opacity: activated === 'History' ? '1' : '0.5' }}
@@ -167,7 +167,10 @@ export const Navbar: React.FC<NavBarProps> = ({ lang }) => {
             </Button>
           </Link>
 
-          <Link to="/community" onClick={() => setActive('Community')}>
+          <Link
+            to="/tortasday/community"
+            onClick={() => setActive('Community')}
+          >
             <Button
               id="Comunnity"
               style={{ opacity: activated === 'History' ? '1' : '0.5' }}
