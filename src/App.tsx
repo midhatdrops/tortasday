@@ -26,9 +26,9 @@ export const App = () => {
       <Reset />
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/history" component={History} />
-          <Route path="/community" component={Comunnity} />
+          <Route exact path="/tortasday" component={HomePage} />
+          <Route path="/tortasday/history" component={History} />
+          <Route path="/tortasday/community" component={Comunnity} />
         </Switch>
       </BrowserRouter>
     </>
